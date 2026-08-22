@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://dnjor.github.io/mohammed-hassan-al-mousa/sitemap.xml
