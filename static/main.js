@@ -73,7 +73,7 @@ const translations = {
       "A Trace to the Sky, a book by Mohammed Hassan Al-Mousa about the soul, life, and faith.",
     skipLink: "Skip to content",
     brandLabel: "A Trace to the Sky",
-    brand: "the author Mohammed Hassan Al-Mousa",
+    brand: "Mohammed Hassan Al-Mousa",
     primaryNav: "Primary navigation",
     languageSwitcher: "Switch language",
     openMenu: "Open menu",
@@ -88,7 +88,7 @@ const translations = {
     heroDownload: "Download the book PDF",
     heroAvailability: "Available in Arabic and English",
     coverAlt: "Cover of A Trace to the Sky by Mohammed Hassan Al-Mousa",
-    coverCaption: "Cover of the Arabic edition of A Trace to the Sky",
+    coverCaption: "Cover of the English edition of A Trace to the Sky",
     aboutImageAlt:
       "Books and a brass lantern inside an Islamic arch in warm light",
     aboutImageCaption:
@@ -99,14 +99,14 @@ const translations = {
       "A Trace to the Sky is one of Mohammed Hassan Al-Mousa's works. It is a short journey between the soul, life, and faith, inviting you to reflect on your relationship with God and on the trace left by your deeds, words, and decisions.",
     bookParagraphTwo:
       "This book is not merely words to be read. It offers moments of reflection that invite you to look within, reconsider your steps, and ask yourself:",
-    bookQuestion: "Am I living in the way I hope to meet God?",
+    bookQuestion: "Am I living in the way I hope to meet Allah?",
     excerptEyebrow: "An excerpt from the book",
     excerptLineOne: "On the path of worship, never look to other people.",
     excerptLineTwo: "People's resolve and determination may weaken.",
     excerptLineThree:
       "After Ramadan, there is no Taraweeh prayer—so, does your night prayer stop?",
     excerptLineFour:
-      "After Ramadan, there is no obligatory fast prescribed by God Almighty except in Ramadan.",
+      "After Ramadan, there is no obligatory fast prescribed by Allah Almighty except in Ramadan.",
     excerptLineFive: "So does fasting stop completely? Do you no longer fast?",
     // excerptSource: "Surah An-Najm: 39",
     aboutAuthorTitle: "About the Author",
@@ -151,6 +151,16 @@ const openGraphDescription = document.querySelector(
   'meta[property="og:description"]',
 );
 const openGraphLocale = document.querySelector('meta[property="og:locale"]');
+const heroCover = document.querySelector('[data-book-cover="hero"]');
+const cardCover = document.querySelector('[data-book-cover="card"]');
+const heroCoverPreload = document.querySelector("#hero-cover-preload");
+
+const coverImages = {
+  ar: "athar-ila-al-sama-cover",
+  en: "a-trace-to-the-sky-cover",
+};
+const heroCoverWidths = [240, 360, 420, 520, 600, 699];
+const cardCoverWidths = [240, 360, 420, 520];
 
 let currentLanguage = "ar";
 
@@ -168,6 +178,35 @@ function storeLanguage(language) {
     window.localStorage.setItem("preferred-language", language);
   } catch {
     // The language still works when private browsing blocks local storage.
+  }
+}
+
+function coverSrcset(fileName, widths) {
+  return widths
+    .map(
+      (width) => `assets/images/${fileName}-${width}.webp ${width}w`,
+    )
+    .join(", ");
+}
+
+function updateBookCovers(language) {
+  const fileName = coverImages[language] || coverImages.ar;
+
+  if (heroCoverPreload) {
+    heroCoverPreload.setAttribute(
+      "imagesrcset",
+      coverSrcset(fileName, heroCoverWidths),
+    );
+  }
+
+  if (heroCover) {
+    heroCover.srcset = coverSrcset(fileName, heroCoverWidths);
+    heroCover.src = `assets/images/${fileName}-420.webp`;
+  }
+
+  if (cardCover) {
+    cardCover.srcset = coverSrcset(fileName, cardCoverWidths);
+    cardCover.src = `assets/images/${fileName}-360.webp`;
   }
 }
 
@@ -192,8 +231,9 @@ function applyLanguage(language, persist = true) {
   const dictionary = translations[selectedLanguage];
 
   currentLanguage = selectedLanguage;
+  updateBookCovers(selectedLanguage);
 
-// Choose the correct PDF.
+  // Choose the correct PDF.
   const pdfFile =
     selectedLanguage === "ar"
       ? "كتاب-أثر-إلى-السماء.pdf"

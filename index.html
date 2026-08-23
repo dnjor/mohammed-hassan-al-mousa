@@ -131,21 +131,15 @@
       }
     </script>
     <title>أثر إلى السماء | محمد حسن الموسى</title>
-    <link
-      rel="preload"
-      as="image"
-      type="image/webp"
-      imagesrcset="assets/images/athar-ila-al-sama-cover-240.webp 240w, assets/images/athar-ila-al-sama-cover-360.webp 360w, assets/images/athar-ila-al-sama-cover-420.webp 420w, assets/images/athar-ila-al-sama-cover-520.webp 520w, assets/images/athar-ila-al-sama-cover-600.webp 600w, assets/images/athar-ila-al-sama-cover-699.webp 699w"
-      imagesizes="(max-width: 40rem) 16rem, (max-width: 64rem) 18rem, 22rem"
-      fetchpriority="high"
-    />
     <script>
       (() => {
         const root = document.documentElement;
         root.classList.add("js");
+        let initialLanguage = "ar";
 
         try {
           if (window.localStorage.getItem("preferred-language") === "en") {
+            initialLanguage = "en";
             root.lang = "en";
             root.dir = "ltr";
             root.classList.add("i18n-pending");
@@ -154,10 +148,38 @@
           // Arabic remains the initial language when storage is unavailable.
         }
 
+        root.dataset.initialLanguage = initialLanguage;
         document.addEventListener(
           "DOMContentLoaded",
           () => root.classList.remove("i18n-pending"),
           { once: true },
+        );
+      })();
+    </script>
+    <link
+      id="hero-cover-preload"
+      rel="preload"
+      as="image"
+      type="image/webp"
+      imagesizes="(max-width: 40rem) 16rem, (max-width: 64rem) 18rem, 22rem"
+      fetchpriority="high"
+    />
+    <script>
+      (() => {
+        const preload = document.getElementById("hero-cover-preload");
+        const coverName =
+          document.documentElement.dataset.initialLanguage === "en"
+            ? "a-trace-to-the-sky-cover"
+            : "athar-ila-al-sama-cover";
+        const widths = [240, 360, 420, 520, 600, 699];
+        preload.setAttribute(
+          "imagesrcset",
+          widths
+            .map(
+              (width) =>
+                `assets/images/${coverName}-${width}.webp ${width}w`,
+            )
+            .join(", "),
         );
       })();
     </script>
@@ -300,6 +322,7 @@
           <figure class="cover-stage">
             <img
               class="book-cover"
+              data-book-cover="hero"
               src="assets/images/athar-ila-al-sama-cover-420.webp"
               srcset="
                 assets/images/athar-ila-al-sama-cover-240.webp 240w,
@@ -510,6 +533,7 @@
 
           <article class="book-card" data-book-id="athar-ila-al-sama">
             <img
+              data-book-cover="card"
               src="assets/images/athar-ila-al-sama-cover-360.webp"
               srcset="
                 assets/images/athar-ila-al-sama-cover-240.webp 240w,
