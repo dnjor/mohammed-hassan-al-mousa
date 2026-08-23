@@ -3,7 +3,8 @@
 const translations = {
   ar: {
     metaTitle: "أثر إلى السماء | محمد حسن الموسى",
-    metaDescription: "أثر إلى السماء، كتاب للكاتب محمد حسن الموسى عن النفس والحياة والإيمان.",
+    metaDescription:
+      "أثر إلى السماء، كتاب للكاتب محمد حسن الموسى عن النفس والحياة والإيمان.",
     skipLink: "انتقل إلى المحتوى",
     brandLabel: "أثر إلى السماء",
     brand: "الكاتب محمد حسن الموسى",
@@ -16,17 +17,10 @@ const translations = {
     navAuthor: "عن المؤلف",
     navBooks: "الكتب",
     navContact: "التواصل",
-    heroEyebrow: "كتاب للكاتب محمد حسن الموسى",
     heroTitle: "أثر إلى السماء",
     heroLead: "رحلة قصيرة بين النفس والحياة والإيمان",
-    heroIntro:
-      "وقفات تدعوك إلى التأمل في علاقتك بالله، وفي الأثر الذي تتركه أعمالك وكلماتك وقراراتك.",
-    downloadArabic: "تحميل النسخة العربية",
-    discoverBook: "اكتشف الكتاب",
-    bookFactsLabel: "معلومات الكتاب",
-    factArabic: "النسخة العربية",
-    factPages: "80 صفحة",
-    factPdf: "ملف PDF",
+    heroDownload: "تحميل الكتاب PDF",
+    heroAvailability: "متوفر باللغة العربية والإنجليزية",
     coverAlt: "غلاف كتاب أثر إلى السماء للكاتب محمد حسن الموسى",
     coverCaption: "غلاف النسخة العربية من كتاب أثر إلى السماء",
     aboutImageAlt: "كتب ومصباح نحاسي داخل قوس إسلامي بإضاءة دافئة",
@@ -38,23 +32,31 @@ const translations = {
     bookParagraphTwo:
       "هذا الكتاب ليس مجرد كلمات تُقرأ، بل وقفات تدعوك لأن تنظر إلى داخلك، وتراجع خطواتك، وتسأل نفسك:",
     bookQuestion: "هل أعيش بالطريقة التي أريد أن ألقى الله بها؟",
-    authorEyebrow: "صاحب الأثر",
+    excerptEyebrow: "مقتطف من الكتاب",
+    excerptLineOne: "دائمًا في طريق العبادة لا تنظر الى الناس.",
+    excerptLineTwo: "قد الناس تفتر هممهم وعزائمهم!",
+    excerptLineThree:
+      "بعد رمضان ما في صلاة تراويح، طيب هل يتوقف قيام الليل عندك؟",
+    excerptLineFour: "بعد رمضان ما في صيام فرضه الله عزّ وجل إلا في رمضان.",
+    excerptLineFive: "طيب يتوقف الصيام تمامًا، ما تصوم!",
+    // excerptSource: "سورة النجم: ٣٩",
     aboutAuthorTitle: "عن المؤلف",
     authorName: "محمد حسن الموسى",
     authorBio:
       "محمد حسن الموسى كاتب شاب يهتم بالكتابة والتأمل في الحياة والإيمان، ويسعى من خلال كلماته إلى تقديم أفكار ووقفات تلامس القلب وتترك أثرًا طيبًا في حياة القارئ.",
-    authorQuote: "الكلمة الطيبة أثرها يبقى",
+    authorImageAlt: "دفتر مفتوح وقلم حبر على قماش كتاني دافئ",
     booksEyebrow: "مكتبة المؤلف",
     booksTitle: "الكتب",
     booksIntro: "البداية مع «أثر إلى السماء»، وستظهر الإصدارات القادمة هنا.",
     bookCardAlt: "غلاف كتاب أثر إلى السماء",
     availableNow: "متاح الآن",
     bookDetails: "تفاصيل الكتاب",
-    downloadEyebrow: "ابدأ القراءة",
-    downloadTitle: "اترك للأثر طريقًا إلى قلبك",
-    downloadText: "حمّل النسخة العربية من الكتاب واقرأها في الوقت الذي يناسبك.",
-    downloadArabicPdf: "تحميل الكتاب PDF",
-    downloadNote: "النسخة العربية · 80 صفحة · 4.7 MB",
+    legacyTitle: "الكلمة الطيبة",
+    legacyQuote: "أثرها يبقى…",
+    legacyQuestion: "هل أنت مستعد لرحلة مختلفة؟",
+    legacyText: "اقرأ، تأمل، واترك لكلماتك وأعمالك أثرًا يمتد إلى السماء.",
+    legacyDownload: "تحميل الكتاب PDF",
+    legacyContact: "تواصل مع المؤلف",
     contactEyebrow: "ابقَ قريبًا",
     contactTitle: "للتواصل والمتابعة",
     contactIntro: "تابع جديد الكاتب أو تواصل معه مباشرة.",
@@ -63,6 +65,7 @@ const translations = {
     instagramTitle: "إنستغرام",
     snapchatTitle: "سناب شات",
     footerRights: "محمد حسن الموسى. جميع الحقوق محفوظة.",
+    developerCredit: "تم تطويره من قبل",
   },
   en: {
     metaTitle: "A Trace to the Sky | Mohammed Hassan Al-Mousa",
@@ -80,21 +83,16 @@ const translations = {
     navAuthor: "The Author",
     navBooks: "Books",
     navContact: "Contact",
-    heroEyebrow: "A book by Mohammed Hassan Al-Mousa",
     heroTitle: "A Trace to the Sky",
     heroLead: "A short journey between the soul, life, and faith",
-    heroIntro:
-      "Reflections that invite you to consider your relationship with God and the trace left by your deeds, words, and decisions.",
-    downloadArabic: "Download the Arabic edition",
-    discoverBook: "Discover the book",
-    bookFactsLabel: "Book details",
-    factArabic: "Arabic edition",
-    factPages: "80 pages",
-    factPdf: "PDF file",
+    heroDownload: "Download the book PDF",
+    heroAvailability: "Available in Arabic and English",
     coverAlt: "Cover of A Trace to the Sky by Mohammed Hassan Al-Mousa",
     coverCaption: "Cover of the Arabic edition of A Trace to the Sky",
-    aboutImageAlt: "Books and a brass lantern inside an Islamic arch in warm light",
-    aboutImageCaption: "A quiet scene reflecting the mood of contemplation and reading",
+    aboutImageAlt:
+      "Books and a brass lantern inside an Islamic arch in warm light",
+    aboutImageCaption:
+      "A quiet scene reflecting the mood of contemplation and reading",
     bookEyebrow: "Between the lines",
     aboutBookTitle: "About the Book",
     bookParagraphOne:
@@ -102,23 +100,34 @@ const translations = {
     bookParagraphTwo:
       "This book is not merely words to be read. It offers moments of reflection that invite you to look within, reconsider your steps, and ask yourself:",
     bookQuestion: "Am I living in the way I hope to meet God?",
-    authorEyebrow: "The voice behind the words",
+    excerptEyebrow: "An excerpt from the book",
+    excerptLineOne: "On the path of worship, never look to other people.",
+    excerptLineTwo: "People's resolve and determination may weaken.",
+    excerptLineThree:
+      "After Ramadan, there is no Taraweeh prayer—so, does your night prayer stop?",
+    excerptLineFour:
+      "After Ramadan, there is no obligatory fast prescribed by God Almighty except in Ramadan.",
+    excerptLineFive: "So does fasting stop completely? Do you no longer fast?",
+    // excerptSource: "Surah An-Najm: 39",
     aboutAuthorTitle: "About the Author",
     authorName: "Mohammed Hassan Al-Mousa",
     authorBio:
-      "Mohammed Hassan Al-Mousa is a young writer interested in writing and reflecting on life and faith. Through his words, he seeks to offer ideas and moments of reflection that touch the heart and leave a positive trace in the reader's life.",
-    authorQuote: "A kind word leaves a lasting trace",
+      "A young writer devoted to writing and reflecting on life and faith, seeking through his words to offer ideas and pauses that touch the heart and leave a good trace in the reader's life.",
+    authorImageAlt: "An open notebook and fountain pen on warm linen",
     booksEyebrow: "The author's library",
     booksTitle: "Books",
-    booksIntro: "The journey begins with A Trace to the Sky. Future releases will appear here.",
+    booksIntro:
+      "The journey begins with A Trace to the Sky. Future releases will appear here.",
     bookCardAlt: "Cover of A Trace to the Sky",
     availableNow: "Available now",
     bookDetails: "Book details",
-    downloadEyebrow: "Begin reading",
-    downloadTitle: "Let these words find their way to your heart",
-    downloadText: "Download the Arabic edition and read it whenever the moment feels right.",
-    downloadArabicPdf: "Download the Arabic PDF",
-    downloadNote: "Arabic edition · 80 pages · 4.7 MB",
+    legacyTitle: "A Kind Word",
+    legacyQuote: "Its impact remains…",
+    legacyQuestion: "Are you ready for a different journey?",
+    legacyText:
+      "Read, reflect, and let your words and deeds leave a trace that reaches the sky.",
+    legacyDownload: "Download the Book PDF",
+    legacyContact: "Contact the Author",
     contactEyebrow: "Stay connected",
     contactTitle: "Contact and Follow",
     contactIntro: "Follow the author's latest work or get in touch directly.",
@@ -127,6 +136,7 @@ const translations = {
     instagramTitle: "Instagram",
     snapchatTitle: "Snapchat",
     footerRights: "Mohammed Hassan Al-Mousa. All rights reserved.",
+    developerCredit: "Developed by",
   },
 };
 
@@ -137,7 +147,9 @@ const languageButtons = document.querySelectorAll("[data-language]");
 const currentYear = document.querySelector("[data-current-year]");
 const description = document.querySelector('meta[name="description"]');
 const openGraphTitle = document.querySelector('meta[property="og:title"]');
-const openGraphDescription = document.querySelector('meta[property="og:description"]');
+const openGraphDescription = document.querySelector(
+  'meta[property="og:description"]',
+);
 const openGraphLocale = document.querySelector('meta[property="og:locale"]');
 
 let currentLanguage = "ar";
@@ -162,7 +174,10 @@ function storeLanguage(language) {
 function updateMenuLabel(isOpen) {
   if (!menuToggle) return;
   const dictionary = translations[currentLanguage];
-  menuToggle.setAttribute("aria-label", isOpen ? dictionary.closeMenu : dictionary.openMenu);
+  menuToggle.setAttribute(
+    "aria-label",
+    isOpen ? dictionary.closeMenu : dictionary.openMenu,
+  );
 }
 
 function setMenu(isOpen) {
@@ -175,7 +190,18 @@ function setMenu(isOpen) {
 function applyLanguage(language, persist = true) {
   const selectedLanguage = translations[language] ? language : "ar";
   const dictionary = translations[selectedLanguage];
+
   currentLanguage = selectedLanguage;
+
+// Choose the correct PDF.
+  const pdfFile =
+    selectedLanguage === "ar"
+      ? "كتاب-أثر-إلى-السماء.pdf"
+      : "A-book-A-trace-to-the-Sky.pdf";
+
+  document.querySelectorAll("[data-download-link]").forEach((link) => {
+    link.href = `assets/books/${pdfFile}`;
+  });
 
   root.lang = selectedLanguage;
   root.dir = selectedLanguage === "ar" ? "rtl" : "ltr";
@@ -183,8 +209,10 @@ function applyLanguage(language, persist = true) {
 
   if (description) description.content = dictionary.metaDescription;
   if (openGraphTitle) openGraphTitle.content = dictionary.metaTitle;
-  if (openGraphDescription) openGraphDescription.content = dictionary.metaDescription;
-  if (openGraphLocale) openGraphLocale.content = selectedLanguage === "ar" ? "ar_SA" : "en_US";
+  if (openGraphDescription)
+    openGraphDescription.content = dictionary.metaDescription;
+  if (openGraphLocale)
+    openGraphLocale.content = selectedLanguage === "ar" ? "ar_SA" : "en_US";
 
   document.querySelectorAll("[data-i18n]").forEach((element) => {
     const key = element.dataset.i18n;
@@ -226,7 +254,10 @@ if (menuToggle && headerPanel) {
   });
 
   document.addEventListener("keydown", (event) => {
-    if (event.key === "Escape" && menuToggle.getAttribute("aria-expanded") === "true") {
+    if (
+      event.key === "Escape" &&
+      menuToggle.getAttribute("aria-expanded") === "true"
+    ) {
       setMenu(false);
       menuToggle.focus();
     }
@@ -244,7 +275,9 @@ if (menuToggle && headerPanel) {
 }
 
 languageButtons.forEach((button) => {
-  button.addEventListener("click", () => applyLanguage(button.dataset.language));
+  button.addEventListener("click", () =>
+    applyLanguage(button.dataset.language),
+  );
 });
 
 applyLanguage(storedLanguage(), false);
