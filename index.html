@@ -176,8 +176,7 @@
           "imagesrcset",
           widths
             .map(
-              (width) =>
-                `assets/images/${coverName}-${width}.webp ${width}w`,
+              (width) => `assets/images/${coverName}-${width}.webp ${width}w`,
             )
             .join(", "),
         );
@@ -189,7 +188,7 @@
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@400;500;600;700&amp;family=IBM+Plex+Sans+Arabic:wght@300;400;500;600&amp;family=Noto+Naskh+Arabic:wght@400;500;600&amp;display=swap"
     />
-    <link rel="stylesheet" href="static/style.css" />
+    <link rel="stylesheet" href="static/style.css?v=20260825-2" />
     <script src="static/main.js" defer></script>
   </head>
   <body>
@@ -208,20 +207,6 @@
           <span class="brand-mark" aria-hidden="true">✦</span>
           <span data-i18n="brand">أثر إلى السماء</span>
         </a>
-
-        <button
-          class="menu-toggle"
-          type="button"
-          aria-expanded="false"
-          aria-controls="site-nav"
-          aria-label="فتح القائمة"
-          data-menu-toggle
-          data-i18n-aria-label="openMenu"
-        >
-          <span aria-hidden="true"></span>
-          <span aria-hidden="true"></span>
-          <span aria-hidden="true"></span>
-        </button>
 
         <div class="header-panel" id="site-nav" data-header-panel>
           <nav
@@ -426,17 +411,26 @@
               <p class="excerpt-line" data-i18n="excerptLineTwo">
                 قد الناس تفتر هممهم وعزائمهم!
               </p>
-              <p class="excerpt-line excerpt-line-question" data-i18n="excerptLineThree">
+              <p
+                class="excerpt-line excerpt-line-question"
+                data-i18n="excerptLineThree"
+              >
                 بعد رمضان ما في صلاة تراويح، طيب هل يتوقف قيام الليل عندك؟
               </p>
               <p class="excerpt-line" data-i18n="excerptLineFour">
                 بعد رمضان ما في صيام فرضه الله عزّ وجل إلا في رمضان.
               </p>
-              <p class="excerpt-line excerpt-line-question" data-i18n="excerptLineFive">
+              <p
+                class="excerpt-line excerpt-line-question"
+                data-i18n="excerptLineFive"
+              >
                 طيب يتوقف الصيام تمامًا، ما تصوم!
               </p>
             </div>
-            <span class="excerpt-quote-mark excerpt-quote-mark-end" aria-hidden="true">
+            <span
+              class="excerpt-quote-mark excerpt-quote-mark-end"
+              aria-hidden="true"
+            >
               &quot;
             </span>
           </blockquote>
@@ -457,7 +451,6 @@
             </svg>
             <span></span>
           </div>
-
         </div>
       </section>
 
@@ -561,7 +554,11 @@
         </div>
       </section>
 
-      <section class="legacy-section" id="download" aria-labelledby="legacy-title">
+      <section
+        class="legacy-section"
+        id="download"
+        aria-labelledby="legacy-title"
+      >
         <div class="legacy-banner">
           <picture class="legacy-background" aria-hidden="true">
             <source
@@ -597,7 +594,9 @@
                 stroke="currentColor"
                 stroke-width="1.2"
               >
-                <path d="M12 1.5 15 9l7.5 3-7.5 3-3 7.5-3-7.5L1.5 12 9 9z"></path>
+                <path
+                  d="M12 1.5 15 9l7.5 3-7.5 3-3 7.5-3-7.5L1.5 12 9 9z"
+                ></path>
                 <path d="M12 4.5 18.5 12 12 19.5 5.5 12z" opacity="0.7"></path>
                 <circle cx="12" cy="12" r="1.6"></circle>
               </svg>
@@ -750,14 +749,14 @@
               class="developer-link"
               href="https://www.instagram.com/mstraldyfy"
             >
-            Johan
+              Johan
             </a>
             <span aria-hidden="true">&amp;</span>
             <a
               class="developer-link"
               href="https://www.instagram.com/dina.abbas10"
             >
-            dina
+              dina
             </a>
           </p>
         </div>
